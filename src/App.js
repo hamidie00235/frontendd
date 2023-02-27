@@ -1,25 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css';
+import Card from "./Components/Card";
+import { useState } from "react";
+
+let arr = [
+
+{
+  title: "dağ 1",
+par: "aciklama",
+},
+{
+  title: "dağ 1",
+par: "aciklama",
+},
+{
+  title: "dağ 1",
+par: "aciklama",
 }
+
+
+];
+const App = () => { 
+const[val,setVal]= useState("ders11");
+
+  return(<div>
+<h1>baslik</h1>
+<h2>{val}</h2>
+<button onClick={() => {   
+  setVal("ders12");
+}}>
+  değiştir 
+  </button>
+
+<p>baslangic</p>
+<div className="Cards">
+  {arr.map(({par ,title}) => (
+    <Card par={par} title={title} />
+  ))}
+</div>
+</div>
+  );
+};
 
 export default App;
