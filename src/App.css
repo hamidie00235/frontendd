@@ -23,7 +23,10 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.Cards{
+  display: flex;
+  gap: 10px;
+}
 .App-link {
   color: #61dafb;
 }
