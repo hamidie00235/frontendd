@@ -6,7 +6,6 @@ import { useState } from "react";
 const App = () => {
   const[title,setTitle] = useState("");
   const[paragraph,setParagraph] = useState("");
-  const[lesson,setLesson]= useState([]);
   const[list,setList] = useState([
 
     {id:1,
@@ -52,12 +51,15 @@ setList([...list,{
 <h2>kartlar:</h2>
 <Grid>
   {list.map(({par ,title}, i) => (
-    <Grid.Col span={4}> key={`index ${i}`}
+    <Grid.Col span={4}key={`index ${i}`}>
     <Card 
    par={par} 
-    title={title} 
-    lesson={lesson}
-    a={i}/>
+    title={title} i={i} click={() =>{
+      let copyList = [...list];
+      copyList.splice(i,1);
+      setList(copyList);
+      
+    }}/>
     </Grid.Col>
   ))}
 </Grid>
