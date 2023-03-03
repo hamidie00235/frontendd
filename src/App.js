@@ -3,45 +3,37 @@ import './App.css';
 import Card from "./Components/Card";
 import { useState } from "react";
 
-
-let arr = [
-
-{id:1,
-  title: "dağ 1",
-par: "aciklama 1",
-},
-{id:2,
-  title: "dağ 2",
-par: "aciklama 2",
-},
-{id:3,
-  title: "dağ 3",
-par: "aciklama 3",
-}
-,
-{id:4,
-  title: "dağ 4",
-par: "aciklama 4",
-}
-
-
-];
 const App = () => {
   const[title,setTitle] = useState("");
   const[paragraph,setParagraph] = useState("");
-  const[list,setList] = useState(arr);
-const[lesson,setLesson]= useState([]);
+  const[lesson,setLesson]= useState([]);
+  const[list,setList] = useState([
+
+    {id:1,
+      title: "dağ 1",
+    par: "aciklama 1",
+    },
+    {id:2,
+      title: "dağ 2",
+    par: "aciklama 2",
+    },
+    {id:3,
+      title: "dağ 3",
+    par: "aciklama 3",
+    }
+    ,
+    ]);
 const click = () => {
   setTitle("");
   setParagraph("");
-const copyList = [...list];
-copyList.push({
-id:5,
-title,
-par :paragraph,
-});
-setList(copyList);
-};
+ 
+setList([...list,{
+  id:5,
+  title,
+  par :paragraph,
+}
+]);};
+  
   return(
   <Container>
 <h1>kart olusmturma programi</h1>
